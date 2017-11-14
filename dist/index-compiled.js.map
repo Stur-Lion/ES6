@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":"AAAA;;AAEA,IAAI,IAAI,CAAR;AACA,QAAQ,GAAR,CAAY,CAAZ","file":"index-compiled.js","sourcesContent":["\"use strict\";\n\nvar a = 0;\nconsole.log(a);\n"]}

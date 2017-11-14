@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--<script src="./dist/index.js"></script>-->
+</head>
+<body>
+    Hello World ES6
+    <div id="root"></div>
+</body>
+</html>
+<script>
+    /*for(let i=0;i<2;i++){
+        console.log('里面' + i);
+    }*/
+    /*解构赋值*/
+    /*let [a,b,c] = [1,{a:1},3]
+    console.log(a);
+    console.log(b);
+    console.log(c);*/
+
+    /*let [a='不知道',b] = ['我是谁']
+    console.log(a);
+    console.log(b);*/
+
+    /*let {a,b} = {b:'我是谁',a:'不知道'}
+    console.log(a);
+    console.log(b);*/
+
+    /*let [a,b,c] = 'abc';
+    console.log(a);
+    console.log(b);
+    console.log(c);*/
+
+    /*function a(){
+        console.log(arguments[0]);
+        console.log(arguments[1]);
+        console.log(arguments[2]);
+    }
+    a(1,2)*/
+
+    /*let a = 'lion'
+    let b = `大家好，我是${a},我是大帅哥`;
+    console.log(b);
+    let c = ` <h1>Hello World</h1> `
+    document.getElementById('root').innerHTML = c*/
+
+    /*let a = 'lion';
+    /!*let b = '我是lion,大家好';*!/
+    /!*let b= ['lion','cheng','shng']*!/
+    let b = '大家好，我是lion'
+    /!*console.log(b.includes(a));*!/
+    console.log(b.startsWith(a));
+    console.log(b.endsWith(a));*/
+
+    /*console.log('lion'.repeat(4));*/
+
+    /*数组的方法*/
+    /*var arr = Array.of(1,2,3)
+    console.log(arr);*/
+
+    /*let arr=[1,2,3,4,5,6,7];
+    var a = arr.find(function(value,index,arr){
+        return value>3
+    })
+    console.log(a);*/
+
+    /*let arr = [1,2,3,4];
+    arr.fill('lion',1,3)
+    console.log(arr);*/
+
+    /*let arr = ['lion','sheng','huo','ynn'];
+    let list = arr.entries()
+    console.log(list);
+    console.log(list.next().value);
+    console.log(list.next().value);
+    console.log(list.next().value);
+    console.log(list.next().value);*/
+
+    /*function add(a,b=1){
+        return a+b;
+    }
+    console.log(add(1));*/
+    /*function add(a,b=1){
+        if(a==0){
+            throw new Error('错误')
+        }
+        return a+b;
+    }
+    console.log(add(0));*/
+
+    /*let a = Symbol('lion');
+    console.log(a);
+    console.log(a.toString());*/
+
+    /*var jspang = Symbol();
+    var obj={
+            [jspang]:'技术胖'
+    }
+    console.log(obj[jspang]);
+    obj[jspang]='web';
+    console.log(obj[jspang]);*/
+
+    let state=1;
+
+    function step1(resolve,reject){
+        console.log('1.开始-洗菜做饭');
+        if(state==1){
+            resolve('洗菜做饭--完成');
+        }else{
+            reject('洗菜做饭--出错');
+        }
+    }
+
+
+    function step2(resolve,reject){
+        console.log('2.开始-坐下来吃饭');
+        if(state==1){
+            resolve('坐下来吃饭--完成');
+        }else{
+            reject('坐下来吃饭--出错');
+        }
+    }
+
+
+    function step3(resolve,reject){
+        console.log('3.开始-收拾桌子洗完');
+        if(state==1){
+            resolve('收拾桌子洗完--完成');
+        }else{
+            reject('收拾桌子洗完--出错');
+        }
+    }
+
+    new Promise(step1).then(function(val){
+        console.log(val);
+        return new Promise(step2);
+
+    }).then(function(val){
+        console.log(val);
+        return new Promise(step3);
+    }).then(function(val){
+        console.log(val);
+        return val;
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

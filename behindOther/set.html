@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  console.log('-------------------Set------------------------');
+  var setArr = new Set([1,2,3,4])
+  console.log(setArr);
+  console.log(setArr.add(5));
+  console.log(setArr.add({a:'lion',b:'cheng'}));
+  console.log(setArr.delete(1));
+  console.log(setArr);
+  console.log('-------------------weakSet------------------------');
+  var weakSet = new WeakSet();
+  weakSet.add({a: 'lion', b: 'cheng'});
+  weakSet.add({a: 'lion', b: 'cheng'});
+  console.log(weakSet);
+</script>

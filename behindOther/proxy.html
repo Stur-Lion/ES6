@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  var proxyObj = new Proxy({
+    add:function (val) {
+      return val+10
+    },
+    name:'lion'
+  },{
+    get:function (target,key,property) {
+      console.log('-------------------target------------------------');
+      console.log(target);
+      console.log('-------------------key------------------------');
+      console.log(key);
+      console.log('-------------------property------------------------');
+      console.log(property);
+      return key
+    },
+    set:function (target,key,value,receiver) {
+      
+    }
+  })
+  console.log(proxyObj.name);
+</script>

@@ -12,17 +12,14 @@
 </body>
 </html>
 <script>
-  setTimeout(function() {
-    console.log(1)
-  }, 0);
-  new Promise(function executor(resolve) {
-    console.log(2);
-    for( var i=0 ; i<10000 ; i++ ) {
-      i == 9999 && resolve();
+    function * generatorFun() {
+      yield 'step1';
+      yield 'step2';
+      return 'ending'
     }
-    console.log(3);
-  }).then(function() {
-    console.log(4);
-  });
-  console.log(5);
+    var obj = generatorFun();
+    console.log(obj.next());
+    console.log(obj.next());
+    console.log(obj.next());
+    console.log(obj.next());
 </script>
